@@ -55,10 +55,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             if (isset($_POST['buah']) && isset($_POST['sayur']) && isset($_POST['gula'])) {
                                 echo "<div class='mt-3 fw-bold'>Total belanja Anda adalah: Rp." . $total . "</div>";
 
-                                if ($total > 75000) {
-                                    echo "<div class='mt-3 text-success fw-bold'>Selamat! Anda mendapatkan piring cantik.</div>";
-                                } elseif ($total > 100000) {
+                                if ($total >= 100000) {
                                     $diskon = $diskon + 0.1;
+                                    echo "<div class='mt-3 text-success fw-bold'>Selamat! Anda mendapatkan tambahan diskon 10%.</div>";
+                                } elseif ($total > 75000) {
+                                    echo "<div class='mt-3 text-success fw-bold'>Selamat! Anda mendapatkan piring cantik.</div>";
                                 }
                             }
                             ?>
